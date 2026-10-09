@@ -172,6 +172,25 @@ print(result.ber, result.channel_symbols, result.recovered_bytes)
 codec APIs must run in the learned environment, or use `codec_python` with the
 factory to delegate decoding to that environment.
 
+## Citation
+
+If you find this repository useful in your research, please cite our paper:
+
+[Enabling Training-Free Semantic Communication Systems with Generative Diffusion Models](https://doi.org/10.1109/GLOBECOM59602.2025.11431826), IEEE GLOBECOM 2025.
+
+```bibtex
+@inproceedings{tang2025trainingfree,
+  title     = {Enabling Training-Free Semantic Communication Systems with Generative Diffusion Models},
+  author    = {Tang, Shunpu and Jia, Yuanyuan and Yang, Qianqian and Zhang, Ruichen and Park, Jihong and Niyato, Dusit},
+  booktitle = {GLOBECOM 2025 - 2025 IEEE Global Communications Conference},
+  year      = {2025},
+  doi       = {10.1109/GLOBECOM59602.2025.11431826},
+  url       = {https://doi.org/10.1109/GLOBECOM59602.2025.11431826}
+}
+```
+
+You can also download the [BibTeX file](citation.bib).
+
 ## Development and license
 
 ```bash

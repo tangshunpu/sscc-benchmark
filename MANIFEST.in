@@ -1,4 +1,4 @@
-include LICENSE README.md README.zh-CN.md THIRD_PARTY_NOTICES.md CONTRIBUTING.md SOURCE_ORIGINS.json uv.lock
+include LICENSE README.md README.zh-CN.md THIRD_PARTY_NOTICES.md CONTRIBUTING.md SOURCE_ORIGINS.json citation.bib uv.lock
 recursive-include docs *.md
 recursive-include examples *.py *.toml
 recursive-include scripts *.sh *.py

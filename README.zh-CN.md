@@ -73,5 +73,24 @@ SNR 指 Es/N0；SNR 到 MCS 的选择是带 3 dB 裕量的启发式映射。
 为兼容原实验，失败时使用原图逐通道均值图；这是使用原图信息的 oracle fallback，
 均值信息未计入传输预算，论文或报告必须同时说明该约定和失败比例。
 
+## 引用
+
+如果本仓库对你的研究有帮助，欢迎引用我们的论文：
+
+[Enabling Training-Free Semantic Communication Systems with Generative Diffusion Models](https://doi.org/10.1109/GLOBECOM59602.2025.11431826)，IEEE GLOBECOM 2025。
+
+```bibtex
+@inproceedings{tang2025trainingfree,
+  title     = {Enabling Training-Free Semantic Communication Systems with Generative Diffusion Models},
+  author    = {Tang, Shunpu and Jia, Yuanyuan and Yang, Qianqian and Zhang, Ruichen and Park, Jihong and Niyato, Dusit},
+  booktitle = {GLOBECOM 2025 - 2025 IEEE Global Communications Conference},
+  year      = {2025},
+  doi       = {10.1109/GLOBECOM59602.2025.11431826},
+  url       = {https://doi.org/10.1109/GLOBECOM59602.2025.11431826}
+}
+```
+
+[BibTeX 文件](citation.bib)
+
 [完整 README](README.md) · [实验协议](docs/benchmark.md) ·
 [原项目与上游链接](docs/upstream.md) · [验证记录](docs/validation.md)
