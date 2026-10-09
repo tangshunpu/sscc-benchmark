@@ -1,0 +1,150 @@
+{
+  "note": "Original local source files before portable adaptation; not runtime dependencies.",
+  "files": [
+    {
+      "project": "jscc_baseline",
+      "path": "baseline/digital/__init__.py",
+      "sha256": "a58b43f67499674787b0f5116337e6db61cc5f57793057f7bb2aebd53f604632"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "baseline/digital/codecs/__init__.py",
+      "sha256": "04f74e9922c6e206eb6d98cf2e801c7ae6fad73fad29c5dc43a967b472065fcf"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "baseline/digital/codecs/base.py",
+      "sha256": "92422c8e9736372bfa3ac56cacb40d3bbbc4501481f9c5a2d17f51432a825949"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "baseline/digital/codecs/bpg.py",
+      "sha256": "775a7414663362074eedc5060e373126a1896a059a1997df59883123f30f8929"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "baseline/digital/codecs/elic.py",
+      "sha256": "98c302eb3f7b5e8781a1a2b3fac3fe815440da591ef70afdfd3b90498089ae93"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "baseline/digital/codecs/msillm.py",
+      "sha256": "a028cf44e598068a104f0025c3d2ee5fff0713b41af54e126a5437f04473a224"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "baseline/digital/codecs/registry.py",
+      "sha256": "22bc7727d270c71519591eb85a12fede2d0dc24406c41b86716208d01c109407"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "baseline/digital/codecs/vtm.py",
+      "sha256": "842f408bdddfe3d14ad891293c312ac30f58d79471821de2dd3ba20169c98e1f"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "baseline/digital/mcs.py",
+      "sha256": "ec4a82cd5fd021de0daa01a556f176629d2d011dd8e3956fc3536710d5d089e7"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "baseline/digital/transport.py",
+      "sha256": "8c171b2b122813f91e68f9d3af4e94bf31aacf994e2bd6de897b44059ccf565f"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "baseline/image_dataset.py",
+      "sha256": "4f75b3ee210eed0fab9229a24a25a6e4d74464e5617efaf62af7bec8613d59eb"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "datasets/__init__.py",
+      "sha256": "65a73e77791f5732c7e75492b8b504cb797b73587f0299420082ded77516838a"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "datasets/image_bitstream.py",
+      "sha256": "95628b6aff48e93eeb453e2e0f5b2055ce75f44c1905928c0ab0d579d4fec3f8"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "datasets/image_directory.py",
+      "sha256": "2381865ecda3451a74cd64e3d05b3d7f530813a521bc6d1eefeb1a008a3961a6"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "metrics/__init__.py",
+      "sha256": "4e1b3b1a790e7051a3db013f279711932ff9d2514d089c7ade74844dd1c920fc"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "metrics/quality.py",
+      "sha256": "2228e84576373ecdeb45993efebd59a350c5fdd160633a453f154e426a2cc2f2"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "scripts/run_digital.py",
+      "sha256": "ac1c5271867115937d246908447818899cb4fdfa876759a201b64fe8ba1377c9"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "tests/test_dataset.py",
+      "sha256": "2f1cc1beb5a8a09d9a97a25f08b2131fd379cfb5e7b799ae80e977b7e7e39221"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "tests/test_elic.py",
+      "sha256": "ed67e8173c9b5c822143350d5a9553f31c1173ec38fec3990dc3f632810488b6"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "tests/test_fallback.py",
+      "sha256": "836ab7383e676485aeb14c8c29de0f678713db68fa51226385b4852f1287abf3"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "tests/test_mcs.py",
+      "sha256": "deae97c5b5b4b4e0b0bb11da9150ba128a47832d2c5562c7f63ce1531050f804"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "tests/test_quality.py",
+      "sha256": "b5f57d0d1ab311bb0b409bb6723da1bf3125e553abf64f536793d1b9e99cf9fb"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "tests/test_runner_helpers.py",
+      "sha256": "95d95cd6c51cbb4c05b6f5ff5f95e879bf1098b45ea583cbf5f93a7fc4e6359b"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "tests/test_snr_grid.py",
+      "sha256": "9330e91301c68081001a84984c724bb1aa8c64e27eb9c200bee5aeaeb0db724e"
+    },
+    {
+      "project": "jscc_baseline",
+      "path": "tests/test_tf_jscc.py",
+      "sha256": "953ee067067de323c449f4f87a2570f0566598738e5e9ba6f4d003817163e57a"
+    },
+    {
+      "project": "image_compression",
+      "path": "baseline/bpg.py",
+      "sha256": "e9d2fb4e250bfe56d4c346db4b0b12f920278b9bea23621403e73de40e8597bd"
+    },
+    {
+      "project": "image_compression",
+      "path": "baseline/vtm.py",
+      "sha256": "1b78cc552a44657983173d642c2dc938423a2c90fdf951f4a6c15edbc6ee98aa"
+    },
+    {
+      "project": "image_compression",
+      "path": "baseline/msillm.py",
+      "sha256": "7d0e086bc46092b01657f920307c06e57ae31aa030c0e077b0c41fc0366ce6d3"
+    },
+    {
+      "project": "image_compression",
+      "path": "baseline/elic.py",
+      "sha256": "bcf5faa6be1f932e0d1608a97ab8b538dc8e5d5fbfb912a0240901d1779cc9a5"
+    }
+  ]
+}

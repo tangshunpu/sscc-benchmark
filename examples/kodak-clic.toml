@@ -1,0 +1,23 @@
+methods = ["BPG", "VTM"]
+bitstream_root = "bitstreams"
+results_root = "results"
+
+[benchmark]
+snr_db = [0, 3, 6, 9, 12, 15, 18, 20]
+compression_ratio = 96
+repeats = 3
+seed = 42
+device = "auto"
+metrics = ["psnr"]
+
+[codecs]
+bpg_decoder = "bpgdec"
+vtm_decoder = "DecoderApp"
+
+[[datasets]]
+name = "kodak"
+roots = ["data/kodak"]
+
+[[datasets]]
+name = "clic2020_test"
+roots = ["data/clic2020/mobile_test", "data/clic2020/professional_test"]
