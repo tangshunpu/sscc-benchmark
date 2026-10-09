@@ -182,7 +182,7 @@ If you find this repository useful in your research, please cite our paper:
 @inproceedings{tang2025trainingfree,
   title     = {Enabling Training-Free Semantic Communication Systems with Generative Diffusion Models},
   author    = {Tang, Shunpu and Jia, Yuanyuan and Yang, Qianqian and Zhang, Ruichen and Park, Jihong and Niyato, Dusit},
-  booktitle = {GLOBECOM 2025 - 2025 IEEE Global Communications Conference},
+  booktitle = {2025 IEEE Global Communications Conference (GLOBECOM)},
   year      = {2025},
   doi       = {10.1109/GLOBECOM59602.2025.11431826},
   url       = {https://doi.org/10.1109/GLOBECOM59602.2025.11431826}
