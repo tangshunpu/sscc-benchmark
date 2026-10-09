@@ -5,7 +5,7 @@ Encode images, transmit actual compressed bytes and benchmark reconstructed imag
 on **Kodak** and **CLIC**, including multiple CLIC subsets in one experiment.
 
 [中文快速开始](README.zh-CN.md) · [BPG/VTM installation](docs/codecs.md) ·
-[Benchmark protocol](docs/benchmark.md) · [Learned codecs](docs/learned-codecs.md) ·
+[Channel API](docs/channel.md) · [Benchmark protocol](docs/benchmark.md) · [Learned codecs](docs/learned-codecs.md) ·
 [Upstream projects](docs/upstream.md) · [Validation](docs/validation.md)
 
 | Source codec | Source encoding | Channel decoding | External requirements |
@@ -158,19 +158,54 @@ modeled. See [benchmark.md](docs/benchmark.md) for exact definitions.
 
 ## Library API
 
+### Channel coding: LDPC + QAM + AWGN
+
+Install the `channel` extra to transmit arbitrary bytes independently of any image
+codec. [Full channel API documentation](docs/channel.md) covers configuration,
+budget checks, return fields, SNR sweeps and source/channel integration.
+
 ```python
 from sscc import resolve_channel_config, transmit_bytes
-from sscc.source.bpg import BPGCodec
 
+payload = b"hello channel" * 32
 config = resolve_channel_config(20, modulation_order=16, ldpc_rate=0.5)
-result = transmit_bytes(b"hello channel" * 32, config, seed=42, device="cpu")
-print(result.ber, result.channel_symbols, result.recovered_bytes)
+result = transmit_bytes(payload, config, seed=42, device="cpu")
+print(result.ber, result.channel_symbols, result.recovered_bytes == payload)
 ```
 
-`BPGCodec`, `VTMCodec`, `MSILLMCodec`, `ELiCCodec` expose `encode_decode(...)`.
-`sscc.codecs.create_decoder(...)` decodes recovered byte containers. Learned
-codec APIs must run in the learned environment, or use `codec_python` with the
-factory to delegate decoding to that environment.
+The chain is **32-bit length header → 5G LDPC → QAM → AWGN → soft demapping →
+LDPC decoding → recovered bytes**. Use `mcs_index=10` for a fixed MCS row,
+or omit modulation/rate overrides for SNR-adaptive selection. Supported
+modulation orders are 4, 16 and 64; SNR means Es/N0 per complex symbol.
+
+For image experiments, check `config.payload_fits(len(payload), width, height)`
+before transmission. `transmit_bytes` does not enforce an image budget itself.
+Inspect `recovered_bytes` for `None`; nonempty recovered bytes can still contain
+errors. `TransmissionResult` also reports BER, block errors and realized LDPC rate.
+
+### Source coding
+
+`BPGCodec`, `VTMCodec`, `MSILLMCodec`, `ELiCCodec` expose
+`encode_decode(image_path, quality, bitstream_path, reconstruction_path)`:
+
+```python
+from pathlib import Path
+from sscc.source.bpg import BPGCodec
+
+encoded = BPGCodec().encode_decode(
+    Path("data/kodak/kodim01.png"),
+    quality=48,
+    bitstream_path=Path("results/library-api/source.bpg"),
+    reconstruction_path=Path("results/library-api/source-recon.png"),
+)
+payload = encoded.bitstream.read_bytes()
+```
+
+Pass the payload to `transmit_bytes`, then use
+`sscc.codecs.create_decoder(...)` to decode the recovered byte container.
+See the [complete source-to-channel example](docs/channel.md#connect-a-source-codec-to-the-channel).
+Learned codec APIs run in the learned environment, or use `codec_python` with
+the decoder factory to delegate decoding to that environment.
 
 ## Citation
 

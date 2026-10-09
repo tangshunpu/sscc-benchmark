@@ -73,6 +73,28 @@ SNR 指 Es/N0；SNR 到 MCS 的选择是带 3 dB 裕量的启发式映射。
 为兼容原实验，失败时使用原图逐通道均值图；这是使用原图信息的 oracle fallback，
 均值信息未计入传输预算，论文或报告必须同时说明该约定和失败比例。
 
+## Library API：信道编码
+
+信道模块可独立传输任意非空 `bytes`，无需图像编码器：
+
+```python
+from sscc import resolve_channel_config, transmit_bytes
+
+payload = b"hello channel" * 32
+config = resolve_channel_config(20, modulation_order=16, ldpc_rate=0.5)
+result = transmit_bytes(payload, config, seed=42, device="cpu")
+print(result.ber, result.channel_symbols, result.recovered_bytes == payload)
+```
+
+处理流程：**32-bit 长度头 → 5G LDPC → QAM → AWGN → 软解调 → LDPC 解码 → 字节恢复**。
+支持 QPSK、16-QAM、64-QAM，以及固定或自动 MCS。SNR 定义为复符号的 Es/N0。
+做图像实验时，先用 `config.payload_fits(len(payload), width, height)` 检查预算；
+`transmit_bytes` 本身不接收图像尺寸，也不会自动限制符号数。
+`recovered_bytes` 可能为 `None`；返回字节也不代表数据完全正确，需要检查误码和解码结果。
+
+[完整 Channel API 文档](docs/channel.md)包含安装、参数表、返回字段、SNR 扫描、
+复现约定，以及信源编码接入信道的完整示例。
+
 ## 引用
 
 如果本仓库对你的研究有帮助，欢迎引用我们的论文：
